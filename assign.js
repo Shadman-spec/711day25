@@ -10,7 +10,7 @@ function fixWeightMachine(array) {
 
     }
     for (let index = 0; index < array.length; index++) {
-        if (typeof array[index] === 'number' && !isNaN(array[index]) && typeof array[index] !== 'undefined' && array[index] > 0) {
+        if (typeof array[index] === 'number' && !isNaN(array[index]) && array[index] > 0) {
             finalrray.push(array[index])
 
         }
@@ -26,11 +26,6 @@ function fixWeightMachine(array) {
 var numbers = [100, null, 20, 34, 45, undefined]
 const finalresult = fixWeightMachine(numbers)
 console.log(finalresult);
-
-
-
-
-
 
 function countVowels(v) {
     const vowels = 'aeiouAEIOU'
@@ -53,7 +48,7 @@ function countVowels(v) {
     }
     return count;
 }
-var word = ''
+var word = 'Bangladesh'
 const result = countVowels(word)
 console.log(result);
 
@@ -63,44 +58,34 @@ function evaluateResult
     if (!Array.isArray(e)) {
         console.log('Invalid Input');
         return;
-
-
-    }
-    for (let numind = 0; numind < e.length; numind++) {
-        const num = e[numind]
-        if (typeof num !== 'number' || isNaN(num)) {
-            console.log('Invalid ');
-        }
-
-        if (num < 50) {
-            console.log('F');
-
-
-        }
-        else if (num >= 50 && num < 60) {
-            console.log('D');
-        }
-
-
-
-        else if (num >= 60 && num < 70) {
-            console.log('C');
-        }
-        else if (num >= 70 && num < 80) {
-            console.log('B');
-        }
-        else if (num >= 80 && num < 90) {
-            console.log('A');
-        }
-        else if (num >= 90) {
-            console.log('A +');
-        }
-
     }
 
+    const num = []
 
+    for (let grades of e) {
+        if (typeof grades !== 'number' || isNaN(grades)) {
+            num.push('Invalid')
+        }
+
+        if (grades < 50) num.push('F')
+        else if (grades < 60) num.push('D')
+
+
+
+        else if (grades < 70) num.push('C')
+
+        else if (grades < 80) num.push('B')
+
+        else if (grades < 90) num.push('A')
+
+        else num.push('A+')
+
+    }
+    return num
 }
-var arr = [100, 87, 90]
+
+
+var arr = [40, 87, 90]
 const res = evaluateResult(arr)
 console.log(res);
 
@@ -138,7 +123,7 @@ function createPerfectPassword
 
 const data = {
     name: 'shadman',
-    year: 200
+    year: 2004
 }
 const results = createPerfectPassword(data)
 console.log(results);
@@ -166,13 +151,13 @@ function calculateMonthlyExpenses(income, expense) {
         return;
     }
     else {
-        console.log(outp);
+
         return outp
     }
 
 }
 const income = [2000, 1000, 4000]
-const expense = '20000'
+const expense = 3000
 const resul = calculateMonthlyExpenses(income, expense)
 
 console.log(resul);
